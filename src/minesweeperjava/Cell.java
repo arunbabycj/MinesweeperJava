@@ -62,4 +62,34 @@ public class Cell implements ActionListener{
             button.setText(String.valueOf(value));
         }
     }
+    
+    public void checkCell(){
+        button.setEnabled(false);
+        displayValue();
+        notChecked = false;
+        if(value == 0) board.scanForEmptyCells();
+        if(value == -1) board.fail();
+    }
+    
+    public void incrementValue(){
+        value++;
+    }
+
+    public boolean isNotChecked(){
+        return notChecked;
+    }
+
+    public boolean isEmpty(){
+        return isNotChecked() && value==0;
+    }
+
+    public void reveal(){
+        displayValue();
+        button.setEnabled(false);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        checkCell();
+    }
 }
