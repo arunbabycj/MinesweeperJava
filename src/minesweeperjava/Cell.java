@@ -45,4 +45,21 @@ public class Cell implements ActionListener{
     public int getId() {
         return id;
     }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void displayValue(){
+        if(value==-1){
+            button.setText("\u2600");
+            button.setBackground(Color.RED);
+        }else if(value!=0){
+            button.setText(String.valueOf(value));
+        }
+    }
 }

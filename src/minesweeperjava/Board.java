@@ -44,4 +44,24 @@ public void setBoard(){
         }
         return panel;
     }
+    
+    public void plantMines(){
+        ArrayList<Integer> loc = generateMinesLocation(10);
+        for(int i : loc){
+            getCell(i).setValue(-1);
+        }
+    }
+    /*Choose rendom places for mines*/
+    public ArrayList<Integer> generateMinesLocation(int q){
+        ArrayList<Integer> loc = new ArrayList<Integer>();
+        int random;
+        for(int i = 0; i<q;){
+            random = (int)(Math.random()* (side*side));
+            if(!loc.contains(random)){
+                loc.add(random);
+                i++;
+            }
+        }
+        return loc;
+    }    
 }
