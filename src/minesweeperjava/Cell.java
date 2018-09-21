@@ -33,4 +33,16 @@ public class Cell implements ActionListener{
         this.board = board;
         notChecked = true;
     }
+    
+    public JButton getButton() {
+        return button;
+    }
+
+    public int getValue() {
+        return value;
+    }
+    
+    public int getId() {
+        return id;
+    }
 }

@@ -31,4 +31,17 @@ public void setBoard(){
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+    
+    public JPanel addCells(){
+        JPanel panel = new JPanel(new GridLayout(side,side));
+        cells = new Cell[side][side];
+        for(int i = 0; i< side; i++){
+            for(int j = 0; j<side; j++){
+                cells[i][j] = new Cell(this);
+                cells[i][j].setId(getID());
+                panel.add(cells[i][j].getButton());
+            }
+        }
+        return panel;
+    }
 }
